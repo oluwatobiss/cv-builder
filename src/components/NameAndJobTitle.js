@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import faker from "faker";
+import ParagraphEleMaker from "./ParagraphEleMaker";
 
 class NameAndJobTitle extends Component {
     constructor() {
@@ -28,17 +29,22 @@ class NameAndJobTitle extends Component {
     render() {
         return (
             <div id="name-and-job-title-div">
-                {
-                    this.state.fullName.showInputEle ?
-                    <input type="text" className="fullName" name="fullName" value={this.state.fullName.text} onChange={this.handleChange} onBlur={this.handleBlur} autoFocus /> :
-                    <p className="fullName" onDoubleClick={this.handleDoubleClick}>{this.state.fullName.text}</p>
-                }
-
-                {
-                    this.state.jobTitle.showInputEle ?
-                    <input type="text" className="jobTitle" name="jobTitle" value={this.state.jobTitle.text} onChange={this.handleChange} onBlur={this.handleBlur} autoFocus /> :
-                    <p className="jobTitle" onDoubleClick={this.handleDoubleClick}>{this.state.jobTitle.text}</p>
-                }
+                <ParagraphEleMaker name="fullName"
+                    type="text"
+                    text={this.state.fullName.text}
+                    handleChange={this.handleChange}
+                    handleBlur={this.handleBlur}
+                    handleDoubleClick={this.handleDoubleClick}
+                    showInputEle={this.state.fullName.showInputEle}
+                />
+                <ParagraphEleMaker name="jobTitle"
+                    type="text"
+                    text={this.state.jobTitle.text}
+                    handleChange={this.handleChange}
+                    handleBlur={this.handleBlur}
+                    handleDoubleClick={this.handleDoubleClick}
+                    showInputEle={this.state.jobTitle.showInputEle}
+                />
             </div>
         )
     }

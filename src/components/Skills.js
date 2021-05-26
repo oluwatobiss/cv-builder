@@ -3,7 +3,7 @@ import HoverRating from "./HoverRating";
 function Skills() {
     return (
         <section id="skills-section">
-            <header class="aside-header">Skills</header>
+            <header className="aside-header">Skills</header>
             <div>
                 <article>
                     <p className="sub-header">React</p>

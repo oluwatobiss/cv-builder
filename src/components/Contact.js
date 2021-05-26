@@ -3,7 +3,7 @@ import faker from "faker";
 function Contact() {
     return (
         <section id="contact-section">
-            <header class="aside-header">Contact</header>
+            <header className="aside-header">Contact</header>
             <div>
                 <p className="sub-header">Email</p>
                 <p>{faker.internet.email()}</p>

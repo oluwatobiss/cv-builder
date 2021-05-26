@@ -1,13 +1,11 @@
-import faker from "faker";
+import Avatar from "./Avatar";
+import NameAndJobTitle from "./NameAndJobTitle";
 
 function ID() {
     return (
         <section id="id-section">
-            <img id="avatar" src={faker.image.avatar()} alt="avatar" />
-            <div>
-                <p id="fullname">{`${faker.name.firstName()} ${faker.name.lastName()}`}</p>
-                <p id="job-title">{faker.name.jobTitle()}</p>
-            </div>
+            <Avatar />
+            <NameAndJobTitle />
         </section>
     )
 }

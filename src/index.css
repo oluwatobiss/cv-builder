@@ -79,8 +79,21 @@ main {
     grid-template-columns: 30% 70%;
 }
 
+#avatar-input-ele {
+    display: none;
+}
+
+#avatar {
+    width: 125px;
+    height: 125px;
+}
+
 #avatar {
     border-radius: 50%;
+}
+
+#name-and-job-title-div {
+    padding-left: 10px;
 }
 
 #fullname {

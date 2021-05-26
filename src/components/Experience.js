@@ -3,7 +3,7 @@ import faker from "faker";
 function Experience() {
     return (
         <section id="experience-section">
-            <header class="main-header">Experience</header>
+            <header className="main-header">Experience</header>
             <p className="specialty">{faker.name.jobType()}</p>
             <p>{faker.company.companyName()}, {faker.address.city()}</p>
             <p><em>2015 - Present</em></p>

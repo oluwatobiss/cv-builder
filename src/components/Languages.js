@@ -3,7 +3,7 @@ import HoverRating from "./HoverRating";
 function Languages() {
     return (
         <section id="languages-section">
-            <header class="aside-header">Languages</header>
+            <header className="aside-header">Languages</header>
             <div>
                 <article>
                     <p className="sub-header">English</p>

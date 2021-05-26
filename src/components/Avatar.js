@@ -23,7 +23,7 @@ class Avatar extends Component {
         return (
             <div>
                 <input id="avatar-input-ele" type="file" accept="image/*" onChange={this.handleChange} ref={this.avatarInputEleRef} />
-                <img id="avatar" src={this.state.avatar} alt="avatar" onDoubleClick={this.handleDoubeClick} onLoad={this.handleLoad} />
+                <img id="avatar" src={this.state.avatar} alt="Avatar" onDoubleClick={this.handleDoubeClick} onLoad={this.handleLoad} />
             </div>
         )
     }

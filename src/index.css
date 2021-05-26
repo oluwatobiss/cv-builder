@@ -86,9 +86,6 @@ main {
 #avatar {
     width: 125px;
     height: 125px;
-}
-
-#avatar {
     border-radius: 50%;
 }
 
@@ -96,17 +93,29 @@ main {
     padding-left: 10px;
 }
 
-#fullname {
-    margin-top: 20px;
-    margin-bottom: 0;
-    font-weight: 700;
-    font-size: 2.1rem;
+input {
+    font-family: 'Roboto', sans-serif;
 }
 
-#job-title {
+input:focus {
+    outline: none;
+    border: none;
+}
+
+.fullName {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+.jobTitle {
+    width: 100%;
     margin-top: 10px;
     text-transform: uppercase;
     font-size: .8rem;
+    font-weight: 300;
     color: dimgrey;
 }
 

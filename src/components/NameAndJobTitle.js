@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import faker from "faker";
 import ParagraphEleMaker from "./ParagraphEleMaker";
 
@@ -30,6 +30,7 @@ class NameAndJobTitle extends Component {
         return (
             <div id="name-and-job-title-div">
                 <ParagraphEleMaker name="fullName"
+                    tagName="input"
                     type="text"
                     text={this.state.fullName.text}
                     handleChange={this.handleChange}
@@ -38,6 +39,7 @@ class NameAndJobTitle extends Component {
                     showInputEle={this.state.fullName.showInputEle}
                 />
                 <ParagraphEleMaker name="jobTitle"
+                    tagName="input"
                     type="text"
                     text={this.state.jobTitle.text}
                     handleChange={this.handleChange}

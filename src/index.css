@@ -94,28 +94,33 @@ main {
     padding-left: 10px;
 }
 
-input {
+input, textarea {
+    width: 100%;
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
-input:focus {
+input:focus, textarea:focus {
     outline: none;
     border: none;
 }
 
+textarea:focus {
+    min-height: 110px;
+    margin-top: 14.88px;
+    font-size: .93rem;
+}
+
 .fullName {
-    width: 100%;
     margin: 0;
     font-size: 2.1rem;
     font-weight: 700;
 }
 
 .jobTitle {
-    width: 100%;
     margin-top: 10px;
     text-transform: uppercase;
     font-size: .8rem;
-    font-weight: 300;
     color: dimgrey;
 }
 

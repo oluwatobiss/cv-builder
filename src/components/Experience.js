@@ -69,7 +69,6 @@ class Experience extends Component {
                         showInputEle={this.state.companyCity.showInputEle}
                     />
                 </p>
-
                 <p>
                     <em>
                         <ElementMaker name="startYear"
@@ -95,7 +94,6 @@ class Experience extends Component {
                         />
                     </em>
                 </p>
-                
                 <ul>
                     <ElementMaker name="achievement1"
                         mutableTagType="input"

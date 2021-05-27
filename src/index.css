@@ -94,7 +94,7 @@ main {
     padding-left: 10px;
 }
 
-input, textarea, [class^="company"], [class^="achievement"] {
+input, textarea, [class^="company"], [class^="school"], [class^="achievement"] {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
@@ -106,7 +106,7 @@ textarea:focus {
     font-size: .93rem;
 }
 
-[class^="company"], [class^="achievement"] {
+[class^="company"], [class^="school"], [class^="achievement"] {
     font-size: .93rem;
 }
 

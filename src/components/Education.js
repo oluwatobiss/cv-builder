@@ -7,12 +7,12 @@ class Education extends Component {
         super();
         this.state = {
             specialty: {text: "Business Administration", showInputEle: false},
-            schoolName: {text: "University of California", showInputEle: false},
-            schoolCity: {text: "Berkeley", showInputEle: false},
+            mySchoolName: {text: "University of California", showInputEle: false},
+            mySchoolCity: {text: "Berkeley", showInputEle: false},
             startYear: {text: 2008, showInputEle: false},
             endYear: {text: 2012, showInputEle: false},
-            achievement1: {text: faker.lorem.sentence(), showInputEle: false},
-            achievement2: {text: faker.lorem.sentence(), showInputEle: false},
+            myAchievement1: {text: faker.lorem.sentence(), showInputEle: false},
+            myAchievement2: {text: faker.lorem.sentence(), showInputEle: false},
         }
     }
 
@@ -39,6 +39,7 @@ class Education extends Component {
                 <header className="main-header">Education</header>
                 <ElementMaker name="specialty"
                     mutableTagType="input"
+                    type="text"
                     staticTagType="p"
                     text={this.state.specialty.text}
                     handleChange={this.handleChange}
@@ -47,26 +48,26 @@ class Education extends Component {
                     showInputEle={this.state.specialty.showInputEle}
                 />
                 <p>
-                    <ElementMaker name="schoolName"
+                    <ElementMaker name="mySchoolName"
                         mutableTagType="input"
                         type="text"
                         staticTagType="span"
-                        text={this.state.schoolName.text}
+                        text={this.state.mySchoolName.text}
                         handleChange={this.handleChange}
                         handleBlur={this.handleBlur}
                         handleDoubleClick={this.handleDoubleClick}
-                        showInputEle={this.state.schoolName.showInputEle}
+                        showInputEle={this.state.mySchoolName.showInputEle}
                     />
                     <span>, </span>
-                    <ElementMaker name="schoolCity"
+                    <ElementMaker name="mySchoolCity"
                         mutableTagType="input"
                         type="text"
                         staticTagType="span"
-                        text={this.state.schoolCity.text}
+                        text={this.state.mySchoolCity.text}
                         handleChange={this.handleChange}
                         handleBlur={this.handleBlur}
                         handleDoubleClick={this.handleDoubleClick}
-                        showInputEle={this.state.schoolCity.showInputEle}
+                        showInputEle={this.state.mySchoolCity.showInputEle}
                     />
                 </p>
                 <p>
@@ -95,25 +96,25 @@ class Education extends Component {
                     </em>
                 </p>
                 <ul>
-                    <ElementMaker name="achievement1"
+                    <ElementMaker name="myAchievement1"
                         mutableTagType="input"
                         type="text"
                         staticTagType="li"
-                        text={this.state.achievement1.text}
+                        text={this.state.myAchievement1.text}
                         handleChange={this.handleChange}
                         handleBlur={this.handleBlur}
                         handleDoubleClick={this.handleDoubleClick}
-                        showInputEle={this.state.achievement1.showInputEle}
+                        showInputEle={this.state.myAchievement1.showInputEle}
                     />
-                    <ElementMaker name="achievement2"
+                    <ElementMaker name="myAchievement2"
                         mutableTagType="input"
                         type="text"
                         staticTagType="li"
-                        text={this.state.achievement2.text}
+                        text={this.state.myAchievement2.text}
                         handleChange={this.handleChange}
                         handleBlur={this.handleBlur}
                         handleDoubleClick={this.handleDoubleClick}
-                        showInputEle={this.state.achievement2.showInputEle}
+                        showInputEle={this.state.myAchievement2.showInputEle}
                     />
                 </ul>
             </section>

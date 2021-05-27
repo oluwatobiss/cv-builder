@@ -94,7 +94,7 @@ main {
     padding-left: 10px;
 }
 
-input, textarea, [class^="company"], [class^="school"], [class^="achievement"] {
+input, textarea, [class^="my"] {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
@@ -106,12 +106,16 @@ textarea:focus {
     font-size: .93rem;
 }
 
-[class^="company"], [class^="school"], [class^="achievement"] {
+[class^="my"] {
     font-size: .93rem;
 }
 
-[class^="achievement"] {
+[class*="Achievement"], [class*="Contact"] {
     width: 100%;
+}
+
+[class*="Contact"] {
+    font-size: .8rem;
 }
 
 .fullName {

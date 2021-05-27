@@ -1,6 +1,6 @@
 import { Component } from "react";
 import faker from "faker";
-import ParagraphEleMaker from "./ParagraphEleMaker";
+import ElementMaker from "./ElementMaker";
 
 class Profile extends Component {
     constructor() {
@@ -29,8 +29,9 @@ class Profile extends Component {
         return (
             <section id="profile-section">
                 <header className="main-header">Profile</header>
-                <ParagraphEleMaker name="profile"
-                    tagName="textarea"
+                <ElementMaker name="profile"
+                    mutableTagType="textarea"
+                    staticTagType="p"
                     text={this.state.profile.text}
                     handleChange={this.handleChange}
                     handleBlur={this.handleBlur}

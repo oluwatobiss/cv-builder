@@ -1,6 +1,6 @@
 import { Component } from "react";
 import faker from "faker";
-import ParagraphEleMaker from "./ParagraphEleMaker";
+import ElementMaker from "./ElementMaker";
 
 class NameAndJobTitle extends Component {
     constructor() {
@@ -29,18 +29,20 @@ class NameAndJobTitle extends Component {
     render() {
         return (
             <div id="name-and-job-title-div">
-                <ParagraphEleMaker name="fullName"
-                    tagName="input"
+                <ElementMaker name="fullName"
+                    mutableTagType="input"
                     type="text"
+                    staticTagType="p"
                     text={this.state.fullName.text}
                     handleChange={this.handleChange}
                     handleBlur={this.handleBlur}
                     handleDoubleClick={this.handleDoubleClick}
                     showInputEle={this.state.fullName.showInputEle}
                 />
-                <ParagraphEleMaker name="jobTitle"
-                    tagName="input"
+                <ElementMaker name="jobTitle"
+                    mutableTagType="input"
                     type="text"
+                    staticTagType="p"
                     text={this.state.jobTitle.text}
                     handleChange={this.handleChange}
                     handleBlur={this.handleBlur}
@@ -50,7 +52,6 @@ class NameAndJobTitle extends Component {
             </div>
         )
     }
-
 }
 
 export default NameAndJobTitle;

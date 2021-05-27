@@ -13,7 +13,7 @@ class Avatar extends Component {
     handleChange = (e) => {
         e.target.files[0].type.split("/")[0] === "image" ?
         this.setState({avatar: URL.createObjectURL(e.target.files[0])}) :
-        window.alert("Invalid Upload: Only Image Files Allowed.")
+        alert("Invalid Upload: Only Image Files Allowed.");
     }
 
     handleDoubeClick = () => this.avatarInputEleRef.current.click();

@@ -94,30 +94,35 @@ main {
     padding-left: 10px;
 }
 
-input, textarea {
-    width: 100%;
+input, textarea, [class^="company"], [class^="achievement"] {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
 
-input:focus, textarea:focus {
-    outline: none;
-    border: none;
-}
-
 textarea:focus {
+    width: 100%;
     min-height: 110px;
     margin-top: 14.88px;
     font-size: .93rem;
 }
 
+[class^="company"], [class^="achievement"] {
+    font-size: .93rem;
+}
+
+[class^="achievement"] {
+    width: 100%;
+}
+
 .fullName {
+    width: 100%;
     margin: 0;
     font-size: 2.1rem;
     font-weight: 700;
 }
 
 .jobTitle {
+    width: 100%;
     margin-top: 10px;
     text-transform: uppercase;
     font-size: .8rem;
@@ -134,9 +139,11 @@ textarea:focus {
 }
 
 .specialty {
+    width: 100%;
+    margin-top: 22.4px;
+    margin-bottom: 5px;
     font-size: 1.4rem;
     font-weight: 500;
-    margin-bottom: 5px;
 }
 
 .city {

@@ -16,19 +16,19 @@ class Experience extends Component {
         }
     }
 
-    handleChange = (e) => {
+    handleEleChange = (e) => {
         const {name, value} = e.target;
         Number(value) !== 0 ?
         this.setState({[name]: {...this.state[name], text: value}}) :
         alert("Invalid Input: Only Numbers Allowed.");
     }
 
-    handleBlur = (e) => {
+    handleEleBlur = (e) => {
         const {name} = e.target;
         this.setState({[name]: {...this.state[name], showInputEle: false}});
     }
 
-    handleDoubleClick = (e) => {
+    handleEleDoubleClick = (e) => {
         const {className} = e.target;
         this.setState({[className]: {...this.state[className], showInputEle: true}});
     }
@@ -42,9 +42,9 @@ class Experience extends Component {
                     type="text"
                     staticTagType="p"
                     text={this.state.specialty.text}
-                    handleChange={this.handleChange}
-                    handleBlur={this.handleBlur}
-                    handleDoubleClick={this.handleDoubleClick}
+                    handleEleChange={this.handleEleChange}
+                    handleEleBlur={this.handleEleBlur}
+                    handleEleDoubleClick={this.handleEleDoubleClick}
                     showInputEle={this.state.specialty.showInputEle}
                 />
                 <p>
@@ -53,9 +53,9 @@ class Experience extends Component {
                         type="text"
                         staticTagType="span"
                         text={this.state.myCompanyName.text}
-                        handleChange={this.handleChange}
-                        handleBlur={this.handleBlur}
-                        handleDoubleClick={this.handleDoubleClick}
+                        handleEleChange={this.handleEleChange}
+                        handleEleBlur={this.handleEleBlur}
+                        handleEleDoubleClick={this.handleEleDoubleClick}
                         showInputEle={this.state.myCompanyName.showInputEle}
                     />
                     <span>, </span>
@@ -64,9 +64,9 @@ class Experience extends Component {
                         type="text"
                         staticTagType="span"
                         text={this.state.myCompanyCity.text}
-                        handleChange={this.handleChange}
-                        handleBlur={this.handleBlur}
-                        handleDoubleClick={this.handleDoubleClick}
+                        handleEleChange={this.handleEleChange}
+                        handleEleBlur={this.handleEleBlur}
+                        handleEleDoubleClick={this.handleEleDoubleClick}
                         showInputEle={this.state.myCompanyCity.showInputEle}
                     />
                 </p>
@@ -77,9 +77,9 @@ class Experience extends Component {
                             type="number"
                             staticTagType="span"
                             text={this.state.startYear.text}
-                            handleChange={this.handleChange}
-                            handleBlur={this.handleBlur}
-                            handleDoubleClick={this.handleDoubleClick}
+                            handleEleChange={this.handleEleChange}
+                            handleEleBlur={this.handleEleBlur}
+                            handleEleDoubleClick={this.handleEleDoubleClick}
                             showInputEle={this.state.startYear.showInputEle}
                         />
                         <span> - </span>
@@ -88,9 +88,9 @@ class Experience extends Component {
                             type="number"
                             staticTagType="span"
                             text={this.state.endYear.text}
-                            handleChange={this.handleChange}
-                            handleBlur={this.handleBlur}
-                            handleDoubleClick={this.handleDoubleClick}
+                            handleEleChange={this.handleEleChange}
+                            handleEleBlur={this.handleEleBlur}
+                            handleEleDoubleClick={this.handleEleDoubleClick}
                             showInputEle={this.state.endYear.showInputEle}
                         />
                     </em>
@@ -101,9 +101,9 @@ class Experience extends Component {
                         type="text"
                         staticTagType="li"
                         text={this.state.myAchievement1.text}
-                        handleChange={this.handleChange}
-                        handleBlur={this.handleBlur}
-                        handleDoubleClick={this.handleDoubleClick}
+                        handleEleChange={this.handleEleChange}
+                        handleEleBlur={this.handleEleBlur}
+                        handleEleDoubleClick={this.handleEleDoubleClick}
                         showInputEle={this.state.myAchievement1.showInputEle}
                     />
                     <ElementMaker name="myAchievement2"
@@ -111,9 +111,9 @@ class Experience extends Component {
                         type="text"
                         staticTagType="li"
                         text={this.state.myAchievement2.text}
-                        handleChange={this.handleChange}
-                        handleBlur={this.handleBlur}
-                        handleDoubleClick={this.handleDoubleClick}
+                        handleEleChange={this.handleEleChange}
+                        handleEleBlur={this.handleEleBlur}
+                        handleEleDoubleClick={this.handleEleDoubleClick}
                         showInputEle={this.state.myAchievement2.showInputEle}
                     />
                 </ul>

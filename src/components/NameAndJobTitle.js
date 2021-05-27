@@ -11,17 +11,17 @@ class NameAndJobTitle extends Component {
         };
     }
 
-    handleChange = (e) => {
+    handleEleChange = (e) => {
         const {name, value} = e.target;
         this.setState({[name]: {...this.state[name], text: value}});
     }
 
-    handleBlur = (e) => {
+    handleEleBlur = (e) => {
         const {name} = e.target;
         this.setState({[name]: {...this.state[name], showInputEle: false}});
     }
 
-    handleDoubleClick = (e) => {
+    handleEleDoubleClick = (e) => {
         const {className} = e.target;
         this.setState({[className]: {...this.state[className], showInputEle: true}});
     }
@@ -34,9 +34,9 @@ class NameAndJobTitle extends Component {
                     type="text"
                     staticTagType="p"
                     text={this.state.fullName.text}
-                    handleChange={this.handleChange}
-                    handleBlur={this.handleBlur}
-                    handleDoubleClick={this.handleDoubleClick}
+                    handleEleChange={this.handleEleChange}
+                    handleEleBlur={this.handleEleBlur}
+                    handleEleDoubleClick={this.handleEleDoubleClick}
                     showInputEle={this.state.fullName.showInputEle}
                 />
                 <ElementMaker name="jobTitle"
@@ -44,9 +44,9 @@ class NameAndJobTitle extends Component {
                     type="text"
                     staticTagType="p"
                     text={this.state.jobTitle.text}
-                    handleChange={this.handleChange}
-                    handleBlur={this.handleBlur}
-                    handleDoubleClick={this.handleDoubleClick}
+                    handleEleChange={this.handleEleChange}
+                    handleEleBlur={this.handleEleBlur}
+                    handleEleDoubleClick={this.handleEleDoubleClick}
                     showInputEle={this.state.jobTitle.showInputEle}
                 />
             </div>

@@ -10,17 +10,17 @@ class Profile extends Component {
         }
     }
 
-    handleChange = (e) => {
+    handleEleChange = (e) => {
         const {name, value} = e.target;
         this.setState({[name]: {...this.state[name], text: value}});
     }
 
-    handleBlur = (e) => {
+    handleEleBlur = (e) => {
         const {name} = e.target;
         this.setState({[name]: {...this.state[name], showInputEle: false}});
     }
 
-    handleDoubleClick = (e) => {
+    handleEleDoubleClick = (e) => {
         const {className} = e.target;
         this.setState({[className]: {...this.state[className], showInputEle: true}});
     }
@@ -33,9 +33,9 @@ class Profile extends Component {
                     mutableTagType="textarea"
                     staticTagType="p"
                     text={this.state.profile.text}
-                    handleChange={this.handleChange}
-                    handleBlur={this.handleBlur}
-                    handleDoubleClick={this.handleDoubleClick}
+                    handleEleChange={this.handleEleChange}
+                    handleEleBlur={this.handleEleBlur}
+                    handleEleDoubleClick={this.handleEleDoubleClick}
                     showInputEle={this.state.profile.showInputEle}
                 />
             </section>

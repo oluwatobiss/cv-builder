@@ -10,11 +10,11 @@ function ElementMaker(props) {
                     className={props.name} 
                     name={props.name} 
                     value={props.text} 
-                    onChange={props.handleChange} 
-                    onBlur={props.handleBlur} 
+                    onChange={props.handleEleChange} 
+                    onBlur={props.handleEleBlur} 
                     autoFocus 
                 /> :
-                <StaticTagType className={props.name} onDoubleClick={props.handleDoubleClick}>{props.text}</StaticTagType>
+                <StaticTagType className={props.name} onDoubleClick={props.handleEleDoubleClick}>{props.text}</StaticTagType>
             }
         </>
     )

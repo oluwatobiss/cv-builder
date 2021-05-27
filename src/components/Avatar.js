@@ -10,20 +10,19 @@ class Avatar extends Component {
         };
     }
 
+    handleLoad = e => URL.revokeObjectURL(e.target.src);
+    handleDoubleClick = () => this.avatarInputEleRef.current.click();
     handleChange = (e) => {
         e.target.files[0].type.split("/")[0] === "image" ?
         this.setState({avatar: URL.createObjectURL(e.target.files[0])}) :
         alert("Invalid Upload: Only Image Files Allowed.");
     }
 
-    handleDoubeClick = () => this.avatarInputEleRef.current.click();
-    handleLoad = e => URL.revokeObjectURL(e.target.src);
-
     render() {
         return (
             <div>
                 <input id="avatar-input-ele" type="file" accept="image/*" onChange={this.handleChange} ref={this.avatarInputEleRef} />
-                <img id="avatar" src={this.state.avatar} alt="Avatar" onDoubleClick={this.handleDoubeClick} onLoad={this.handleLoad} />
+                <img id="avatar" src={this.state.avatar} alt="Avatar" onDoubleClick={this.handleDoubleClick} onLoad={this.handleLoad} />
             </div>
         )
     }

@@ -15,17 +15,17 @@ class Contact extends Component {
         }
     }
 
-    handleChange = (e) => {
+    handleEleChange = (e) => {
         const {name, value} = e.target;
         this.setState({[name]: {...this.state[name], text: value}})
     }
 
-    handleBlur = (e) => {
+    handleEleBlur = (e) => {
         const {name} = e.target;
         this.setState({[name]: {...this.state[name], showInputEle: false}});
     }
 
-    handleDoubleClick = (e) => {
+    handleEleDoubleClick = (e) => {
         const {className} = e.target;
         this.setState({[className]: {...this.state[className], showInputEle: true}});
     }
@@ -41,9 +41,9 @@ class Contact extends Component {
                         type="email"
                         staticTagType="p"
                         text={this.state.myContactEmail.text}
-                        handleChange={this.handleChange}
-                        handleBlur={this.handleBlur}
-                        handleDoubleClick={this.handleDoubleClick}
+                        handleEleChange={this.handleEleChange}
+                        handleEleBlur={this.handleEleBlur}
+                        handleEleDoubleClick={this.handleEleDoubleClick}
                         showInputEle={this.state.myContactEmail.showInputEle}
                     />
                 </div>
@@ -54,9 +54,9 @@ class Contact extends Component {
                         type="text"
                         staticTagType="p"
                         text={this.state.myContactStreetName.text}
-                        handleChange={this.handleChange}
-                        handleBlur={this.handleBlur}
-                        handleDoubleClick={this.handleDoubleClick}
+                        handleEleChange={this.handleEleChange}
+                        handleEleBlur={this.handleEleBlur}
+                        handleEleDoubleClick={this.handleEleDoubleClick}
                         showInputEle={this.state.myContactStreetName.showInputEle}
                     />
                     <p>
@@ -65,9 +65,9 @@ class Contact extends Component {
                             type="text"
                             staticTagType="span"
                             text={this.state.myContactCityName.text}
-                            handleChange={this.handleChange}
-                            handleBlur={this.handleBlur}
-                            handleDoubleClick={this.handleDoubleClick}
+                            handleEleChange={this.handleEleChange}
+                            handleEleBlur={this.handleEleBlur}
+                            handleEleDoubleClick={this.handleEleDoubleClick}
                             showInputEle={this.state.myContactCityName.showInputEle}
                         />
                         <span>, </span>
@@ -76,9 +76,9 @@ class Contact extends Component {
                             type="text"
                             staticTagType="span"
                             text={this.state.myContactZipCode.text}
-                            handleChange={this.handleChange}
-                            handleBlur={this.handleBlur}
-                            handleDoubleClick={this.handleDoubleClick}
+                            handleEleChange={this.handleEleChange}
+                            handleEleBlur={this.handleEleBlur}
+                            handleEleDoubleClick={this.handleEleDoubleClick}
                             showInputEle={this.state.myContactZipCode.showInputEle}
                         />
                     </p>
@@ -87,9 +87,9 @@ class Contact extends Component {
                         type="text"
                         staticTagType="p"
                         text={this.state.myContactCountry.text}
-                        handleChange={this.handleChange}
-                        handleBlur={this.handleBlur}
-                        handleDoubleClick={this.handleDoubleClick}
+                        handleEleChange={this.handleEleChange}
+                        handleEleBlur={this.handleEleBlur}
+                        handleEleDoubleClick={this.handleEleDoubleClick}
                         showInputEle={this.state.myContactCountry.showInputEle}
                     />
                 </div>
@@ -100,9 +100,9 @@ class Contact extends Component {
                         type="tel"
                         staticTagType="p"
                         text={this.state.myContactTel.text}
-                        handleChange={this.handleChange}
-                        handleBlur={this.handleBlur}
-                        handleDoubleClick={this.handleDoubleClick}
+                        handleEleChange={this.handleEleChange}
+                        handleEleBlur={this.handleEleBlur}
+                        handleEleDoubleClick={this.handleEleDoubleClick}
                         showInputEle={this.state.myContactTel.showInputEle}
                     />
                 </div>

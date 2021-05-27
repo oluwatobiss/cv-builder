@@ -169,8 +169,11 @@ aside {
     font-weight: 500;
 }
 
-.sub-header {
+[class$="Skill"], [class$="Language"] {
+    width: 100%;
     margin-top: 25px;
+    margin-bottom: 12.8px;
+    font-size: .8rem;
     font-weight: 500;
 }
 

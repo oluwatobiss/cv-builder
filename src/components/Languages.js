@@ -1,23 +1,22 @@
 import { Component } from "react";
 import HoverRating from "./HoverRating";
+// import ElementMaker from "./ElementMaker";
 
 class Languages extends Component {
     constructor() {
         super();
         this.state = { 
-            englishHover: {readOnly: true},
-            frenchHover: {readOnly: true},
+            myFirstLanguage: {readOnly: true},
+            mySecondLanguage: {readOnly: true},
         }
     }
 
     handleRateDoubleClick = (e) => {
         const {id} = e.target;
-        console.log(`I double clicked ${id}`)
         this.setState({[id]: {readOnly: false}});
     }
     handleRateBlur = (e) => {
         const {id} = e.currentTarget;
-        console.log(`I blurred ${id}`)
         this.setState({[id]: {readOnly: true}});
     }
 
@@ -28,18 +27,18 @@ class Languages extends Component {
                 <div>
                     <article>
                         <p className="sub-header">English</p>
-                        <HoverRating hoverName="englishHover"
+                        <HoverRating hoverName="myFirstLanguage"
                             defaultRating={1.5} 
-                            readOnly={this.state.englishHover.readOnly} 
+                            readOnly={this.state.myFirstLanguage.readOnly} 
                             handleRateDoubleClick={this.handleRateDoubleClick}
                             handleRateBlur={this.handleRateBlur}
                         />
                     </article>
                     <article>
                         <p className="sub-header">French</p>
-                        <HoverRating hoverName="frenchHover"
+                        <HoverRating hoverName="mySecondLanguage"
                             defaultRating={4} 
-                            readOnly={this.state.frenchHover.readOnly} 
+                            readOnly={this.state.mySecondLanguage.readOnly} 
                             handleRateDoubleClick={this.handleRateDoubleClick}
                             handleRateBlur={this.handleRateBlur}
                         />

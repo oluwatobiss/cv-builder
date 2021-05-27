@@ -1,14 +1,29 @@
 import { Component } from "react";
 import HoverRating from "./HoverRating";
-// import ElementMaker from "./ElementMaker";
+import ElementMaker from "./ElementMaker";
 
 class Languages extends Component {
     constructor() {
         super();
         this.state = { 
-            myFirstLanguage: {readOnly: true},
-            mySecondLanguage: {readOnly: true},
+            myFirstLanguage: {text: "English", readOnly: true},
+            mySecondLanguage: {text: "French", readOnly: true},
         }
+    }
+
+    handleEleChange = (e) => {
+        const {name, value} = e.target;
+        this.setState({[name]: {...this.state[name], text: value}})
+    }
+
+    handleEleBlur = (e) => {
+        const {name} = e.target;
+        this.setState({[name]: {...this.state[name], showInputEle: false}});
+    }
+
+    handleEleDoubleClick = (e) => {
+        const {className} = e.target;
+        this.setState({[className]: {...this.state[className], showInputEle: true}});
     }
 
     handleRateDoubleClick = (e) => {
@@ -26,7 +41,16 @@ class Languages extends Component {
                 <header className="aside-header">Languages</header>
                 <div>
                     <article>
-                        <p className="sub-header">English</p>
+                        <ElementMaker name="myFirstLanguage"
+                            mutableTagType="input"
+                            type="text"
+                            staticTagType="p"
+                            text={this.state.myFirstLanguage.text}
+                            handleEleChange={this.handleEleChange}
+                            handleEleBlur={this.handleEleBlur}
+                            handleEleDoubleClick={this.handleEleDoubleClick}
+                            showInputEle={this.state.myFirstLanguage.showInputEle}
+                        />
                         <HoverRating hoverName="myFirstLanguage"
                             defaultRating={1.5} 
                             readOnly={this.state.myFirstLanguage.readOnly} 
@@ -35,7 +59,16 @@ class Languages extends Component {
                         />
                     </article>
                     <article>
-                        <p className="sub-header">French</p>
+                        <ElementMaker name="mySecondLanguage"
+                            mutableTagType="input"
+                            type="text"
+                            staticTagType="p"
+                            text={this.state.mySecondLanguage.text}
+                            handleEleChange={this.handleEleChange}
+                            handleEleBlur={this.handleEleBlur}
+                            handleEleDoubleClick={this.handleEleDoubleClick}
+                            showInputEle={this.state.mySecondLanguage.showInputEle}
+                        />
                         <HoverRating hoverName="mySecondLanguage"
                             defaultRating={4} 
                             readOnly={this.state.mySecondLanguage.readOnly} 

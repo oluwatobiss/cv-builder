@@ -33,7 +33,7 @@ body {
     grid-template-columns: 1fr 21cm 1fr;
 }
 
-#about-app-div, #buttons-div {
+#about-app-div, #off-page-buttons-div {
     display: grid;
     align-content: center;
     text-align: center;
@@ -146,8 +146,6 @@ textarea:focus {
 
 .header-btn {
     visibility: hidden;
-    justify-self: end;
-    align-self: center;
     background-color: transparent;
     color: var(--oxford-blue);
     border: 1px solid var(--oxford-blue);
@@ -156,11 +154,13 @@ textarea:focus {
     cursor: pointer;
 }
 
-.main-header:hover > .header-btn, .specialty-div:hover > .header-btn {
+.main-header:hover > .header-btn, 
+.specialty-div:hover > .header-btn,
+.aside-header:hover > .aside-btn {
     visibility: visible;
 }
 
-.header-btn:active {
+.header-btn:active, .aside-btn:active {
     box-shadow: 0 0 1.1em -0.3em rgba(0,0,0,0.25) inset;
 }
 
@@ -189,6 +189,8 @@ aside {
 }
 
 .aside-header {
+    display: grid;
+    grid-template-columns: 60% 40%;
     border-bottom: 1px solid white;
     margin-top: 60px;
     padding-bottom: 6px;
@@ -196,7 +198,17 @@ aside {
     font-weight: 500;
 }
 
-.sub-header, [class$="Skill"], [class$="Language"] {
+.aside-btn {
+    visibility: hidden;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+
+.subHeader, [class$="Skill"], [class$="Language"] {
     width: 100%;
     margin-top: 25px;
     margin-bottom: 12.8px;
@@ -204,11 +216,11 @@ aside {
     font-weight: 500;
 }
 
-#buttons-div {
+#off-page-buttons-div {
     justify-items: center;
 }
 
-.aside-button {
+.offPgBtn {
     background-color: transparent;
     border: 2px groove var(--seal-brown);
     color: var(--seal-brown);
@@ -219,14 +231,14 @@ aside {
     cursor: pointer;
 }
 
-.aside-button:active {
+.offPgBtn:active {
     box-shadow: 0 0 1.1em -0.3em rgba(0,0,0,0.25) inset;
 }
 
-.aside-button:focus {outline:0;}
+.offPgBtn:focus {outline:0;}
 
 @media print {
-    #about-app-div, #buttons-div {
+    #about-app-div, #off-page-buttons-div {
         display: none;
     }
 

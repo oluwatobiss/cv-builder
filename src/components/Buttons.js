@@ -4,8 +4,8 @@ class Buttons extends Component {
     render() {
         return (
             <div id="buttons-div">
-                <button onClick={() => window.print()}>Generate PDF</button>
-                <button>Useful Articles</button>
+                <button className="aside-button" onClick={() => window.print()}>Generate PDF</button>
+                <button className="aside-button">Useful Articles</button>
             </div>
         )
     }

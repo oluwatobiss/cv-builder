@@ -134,6 +134,8 @@ textarea:focus {
 }
 
 .main-header {
+    display: grid;
+    grid-template-columns: 70% 30%;
     font-size: 1rem;
     font-weight: 500;
     border-left: 4px solid var(--oxford-blue);
@@ -142,10 +144,35 @@ textarea:focus {
     color: dimgrey;
 }
 
-.specialty {
-    width: 100%;
+.header-btn {
+    visibility: hidden;
+    justify-self: end;
+    align-self: center;
+    background-color: transparent;
+    color: var(--oxford-blue);
+    border: 1px solid var(--oxford-blue);
+    border-radius: 4px;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+.main-header:hover > .header-btn, .specialty-div:hover > .header-btn {
+    visibility: visible;
+}
+
+.header-btn:active {
+    box-shadow: 0 0 1.1em -0.3em rgba(0,0,0,0.25) inset;
+}
+
+.specialty-div {
+    display: grid;
+    grid-template-columns: 70% 30%;
     margin-top: 22.4px;
     margin-bottom: 5px;
+}
+
+.specialty {
+    width: 100%;
     font-size: 1.4rem;
     font-weight: 500;
 }
@@ -169,7 +196,7 @@ aside {
     font-weight: 500;
 }
 
-[class$="Skill"], [class$="Language"] {
+.sub-header, [class$="Skill"], [class$="Language"] {
     width: 100%;
     margin-top: 25px;
     margin-bottom: 12.8px;
@@ -181,7 +208,7 @@ aside {
     justify-items: center;
 }
 
-button {
+.aside-button {
     background-color: transparent;
     border: 2px groove var(--seal-brown);
     color: var(--seal-brown);
@@ -192,11 +219,11 @@ button {
     cursor: pointer;
 }
 
-button:active {
+.aside-button:active {
     box-shadow: 0 0 1.1em -0.3em rgba(0,0,0,0.25) inset;
 }
 
-button:focus {outline:0;}
+.aside-button:focus {outline:0;}
 
 @media print {
     #about-app-div, #buttons-div {

@@ -1,13 +1,12 @@
 import { Component } from "react";
-import HoverRating from "./HoverRating";
-import ElementMaker from "./ElementMaker";
+import uniqid from "uniqid";
+import SkillInfo from "./SkillInfo";
 
 class Skills extends Component {
     constructor() {
         super();
         this.state = { 
-            myFirstSkill: {text: "React", readOnly: true},
-            mySecondSkill: {text: "Node.js", readOnly: true},
+            mySkills: [<SkillInfo key={uniqid()} />]
         }
     }
 
@@ -35,47 +34,21 @@ class Skills extends Component {
         this.setState({[id]: {readOnly: true}});
     }
 
+    handleBtnClick = () => {
+        this.setState({
+            mySkills: [...this.state.mySkills, <SkillInfo key={uniqid()} />]
+        })
+    }
+
     render() {
         return (
             <section id="skills-section">
-                <header className="aside-header">Skills</header>
+                <header className="aside-header">
+                    <span>Skills</span>
+                    <button className="aside-btn" onClick={this.handleBtnClick}>Add More</button>
+                </header>
                 <div>
-                    <article>
-                        <ElementMaker name="myFirstSkill"
-                            mutableTagType="input"
-                            type="text"
-                            staticTagType="p"
-                            text={this.state.myFirstSkill.text}
-                            handleEleChange={this.handleEleChange}
-                            handleEleBlur={this.handleEleBlur}
-                            handleEleDoubleClick={this.handleEleDoubleClick}
-                            showInputEle={this.state.myFirstSkill.showInputEle}
-                        />
-                        <HoverRating hoverName="myFirstSkill"
-                            defaultRating={3.5} 
-                            readOnly={this.state.myFirstSkill.readOnly} 
-                            handleRateDoubleClick={this.handleRateDoubleClick}
-                            handleRateBlur={this.handleRateBlur}
-                        />
-                    </article>
-                    <article>
-                        <ElementMaker name="mySecondSkill"
-                            mutableTagType="input"
-                            type="text"
-                            staticTagType="p"
-                            text={this.state.mySecondSkill.text}
-                            handleEleChange={this.handleEleChange}
-                            handleEleBlur={this.handleEleBlur}
-                            handleEleDoubleClick={this.handleEleDoubleClick}
-                            showInputEle={this.state.mySecondSkill.showInputEle}
-                        />
-                        <HoverRating hoverName="mySecondSkill"
-                            defaultRating={5} 
-                            readOnly={this.state.mySecondSkill.readOnly} 
-                            handleRateDoubleClick={this.handleRateDoubleClick}
-                            handleRateBlur={this.handleRateBlur}
-                        />
-                    </article>
+                    {this.state.mySkills}
                 </div>
             </section>
         )

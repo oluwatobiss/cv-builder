@@ -1,6 +1,6 @@
 import { Component } from "react";
-import ExperienceInfo from "./ExperienceInfo";
 import uniqid from "uniqid";
+import ExperienceInfo from "./ExperienceInfo";
 
 class Experience extends Component {
     constructor() {

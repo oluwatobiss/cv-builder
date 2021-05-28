@@ -18,9 +18,7 @@ class Education extends Component {
 
     handleEleChange = (e) => {
         const {name, value} = e.target;
-        Number(value) !== 0 ?
-        this.setState({[name]: {...this.state[name], text: value}}) :
-        alert("Invalid Input: Only Numbers Allowed.");
+        this.setState({[name]: {...this.state[name], text: value}});
     }
 
     handleEleBlur = (e) => {
@@ -31,6 +29,13 @@ class Education extends Component {
     handleEleDoubleClick = (e) => {
         const {className} = e.target;
         this.setState({[className]: {...this.state[className], showInputEle: true}});
+    }
+
+    handleNumEleChange = (e) => {
+        const {name, value} = e.target;
+        Number(value) !== 0 ?
+        this.setState({[name]: {...this.state[name], text: value}}) :
+        alert("Invalid Input: Only Numbers Allowed.");
     }
 
     render() {
@@ -77,7 +82,7 @@ class Education extends Component {
                             type="number"
                             staticTagType="span"
                             text={this.state.startYear.text}
-                            handleEleChange={this.handleEleChange}
+                            handleEleChange={this.handleNumEleChange}
                             handleEleBlur={this.handleEleBlur}
                             handleEleDoubleClick={this.handleEleDoubleClick}
                             showInputEle={this.state.startYear.showInputEle}
@@ -88,7 +93,7 @@ class Education extends Component {
                             type="number"
                             staticTagType="span"
                             text={this.state.endYear.text}
-                            handleEleChange={this.handleEleChange}
+                            handleEleChange={this.handleNumEleChange}
                             handleEleBlur={this.handleEleBlur}
                             handleEleDoubleClick={this.handleEleDoubleClick}
                             showInputEle={this.state.endYear.showInputEle}

@@ -1,6 +1,8 @@
 import { Component } from "react";
 import faker from "faker";
+import uniqid from "uniqid";
 import ElementMaker from "./ElementMaker";
+import Achievement from "./Achievement";
 
 class ExperienceInfo extends Component {
     constructor() {
@@ -11,16 +13,13 @@ class ExperienceInfo extends Component {
             myCompanyCity: {text: faker.address.city(), showInputEle: false},
             startYear: {text: 2012, showInputEle: false},
             endYear: {text: 2015, showInputEle: false},
-            myAchievement1: {text: faker.lorem.sentence(), showInputEle: false},
-            myAchievement2: {text: faker.lorem.sentence(), showInputEle: false},
+            myAchievements: [<Achievement key={uniqid()} />, <Achievement key={uniqid()} />],
         }
     }
 
     handleEleChange = (e) => {
         const {name, value} = e.target;
-        Number(value) !== 0 ?
-        this.setState({[name]: {...this.state[name], text: value}}) :
-        alert("Invalid Input: Only Numbers Allowed.");
+        this.setState({[name]: {...this.state[name], text: value}});
     }
 
     handleEleBlur = (e) => {
@@ -31,6 +30,19 @@ class ExperienceInfo extends Component {
     handleEleDoubleClick = (e) => {
         const {className} = e.target;
         this.setState({[className]: {...this.state[className], showInputEle: true}});
+    }
+
+    handleNumEleChange = (e) => {
+        const {name, value} = e.target;
+        Number(value) !== 0 ?
+        this.setState({[name]: {...this.state[name], text: value}}) :
+        alert("Invalid Input: Only Numbers Allowed.");
+    }
+
+    handleBtnClick = () => {
+        this.setState({
+            myAchievements: [...this.state.myAchievements, <Achievement key={uniqid()} />]
+        })
     }
 
     render() {
@@ -79,7 +91,7 @@ class ExperienceInfo extends Component {
                             type="number"
                             staticTagType="span"
                             text={this.state.startYear.text}
-                            handleEleChange={this.handleEleChange}
+                            handleEleChange={this.handleNumEleChange}
                             handleEleBlur={this.handleEleBlur}
                             handleEleDoubleClick={this.handleEleDoubleClick}
                             showInputEle={this.state.startYear.showInputEle}
@@ -90,35 +102,14 @@ class ExperienceInfo extends Component {
                             type="number"
                             staticTagType="span"
                             text={this.state.endYear.text}
-                            handleEleChange={this.handleEleChange}
+                            handleEleChange={this.handleNumEleChange}
                             handleEleBlur={this.handleEleBlur}
                             handleEleDoubleClick={this.handleEleDoubleClick}
                             showInputEle={this.state.endYear.showInputEle}
                         />
                     </em>
                 </p>
-                <ul>
-                    <ElementMaker name="myAchievement1"
-                        mutableTagType="input"
-                        type="text"
-                        staticTagType="li"
-                        text={this.state.myAchievement1.text}
-                        handleEleChange={this.handleEleChange}
-                        handleEleBlur={this.handleEleBlur}
-                        handleEleDoubleClick={this.handleEleDoubleClick}
-                        showInputEle={this.state.myAchievement1.showInputEle}
-                    />
-                    <ElementMaker name="myAchievement2"
-                        mutableTagType="input"
-                        type="text"
-                        staticTagType="li"
-                        text={this.state.myAchievement2.text}
-                        handleEleChange={this.handleEleChange}
-                        handleEleBlur={this.handleEleBlur}
-                        handleEleDoubleClick={this.handleEleDoubleClick}
-                        showInputEle={this.state.myAchievement2.showInputEle}
-                    />
-                </ul>
+                <ul>{this.state.myAchievements}</ul>
             </>
         )
     }

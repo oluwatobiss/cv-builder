@@ -1,13 +1,12 @@
 import { Component } from "react";
-import HoverRating from "./HoverRating";
-import ElementMaker from "./ElementMaker";
+import uniqid from "uniqid";
+import LanguageInfo from "./LanguageInfo";
 
 class Languages extends Component {
     constructor() {
         super();
         this.state = { 
-            myFirstLanguage: {text: "English", readOnly: true},
-            mySecondLanguage: {text: "French", readOnly: true},
+            myLanguages: [<LanguageInfo key={uniqid()} />]
         }
     }
 
@@ -27,56 +26,28 @@ class Languages extends Component {
     }
 
     handleRateDoubleClick = (e) => {
-        const {id} = e.target;
-        this.setState({[id]: {readOnly: false}});
+        const {id} = e.currentTarget;
+        this.setState({[id]: {...this.state[id], readOnly: false}});
     }
     handleRateBlur = (e) => {
         const {id} = e.currentTarget;
-        this.setState({[id]: {readOnly: true}});
+        this.setState({[id]: {...this.state[id], readOnly: true}});
+    }
+
+    handleBtnClick = () => {
+        this.setState({
+            myLanguages: [...this.state.myLanguages, <LanguageInfo key={uniqid()} />]
+        })
     }
 
     render() {
         return (
             <section id="languages-section">
-                <header className="aside-header">Languages</header>
-                <div>
-                    <article>
-                        <ElementMaker name="myFirstLanguage"
-                            mutableTagType="input"
-                            type="text"
-                            staticTagType="p"
-                            text={this.state.myFirstLanguage.text}
-                            handleEleChange={this.handleEleChange}
-                            handleEleBlur={this.handleEleBlur}
-                            handleEleDoubleClick={this.handleEleDoubleClick}
-                            showInputEle={this.state.myFirstLanguage.showInputEle}
-                        />
-                        <HoverRating hoverName="myFirstLanguage"
-                            defaultRating={1.5} 
-                            readOnly={this.state.myFirstLanguage.readOnly} 
-                            handleRateDoubleClick={this.handleRateDoubleClick}
-                            handleRateBlur={this.handleRateBlur}
-                        />
-                    </article>
-                    <article>
-                        <ElementMaker name="mySecondLanguage"
-                            mutableTagType="input"
-                            type="text"
-                            staticTagType="p"
-                            text={this.state.mySecondLanguage.text}
-                            handleEleChange={this.handleEleChange}
-                            handleEleBlur={this.handleEleBlur}
-                            handleEleDoubleClick={this.handleEleDoubleClick}
-                            showInputEle={this.state.mySecondLanguage.showInputEle}
-                        />
-                        <HoverRating hoverName="mySecondLanguage"
-                            defaultRating={4} 
-                            readOnly={this.state.mySecondLanguage.readOnly} 
-                            handleRateDoubleClick={this.handleRateDoubleClick}
-                            handleRateBlur={this.handleRateBlur}
-                        />
-                    </article>
-                </div>
+                <header className="aside-header">
+                    <span>Languages</span>
+                    <button className="aside-btn" onClick={this.handleBtnClick}>Add More</button>
+                </header>
+                {this.state.myLanguages}
             </section>
         )
     }

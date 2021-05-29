@@ -2,7 +2,7 @@ import { Component } from "react";
 import HoverRating from "./HoverRating";
 import ElementMaker from "./ElementMaker";
 
-class Skills extends Component {
+class SkillInfo extends Component {
     constructor() {
         super();
         this.state = { 
@@ -58,4 +58,4 @@ class Skills extends Component {
     }
 }
 
-export default Skills;
+export default SkillInfo;

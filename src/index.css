@@ -70,7 +70,7 @@ a:hover {
 }
 
 main {
-    padding: 50px;
+    padding: 40px 50px;
 }
 
 #id-section {
@@ -183,7 +183,7 @@ textarea:focus {
 
 aside {
     background-color: var(--oxford-blue);
-    padding: 170px 20px 30px;
+    padding: 170px 20px 40px;
     font-size: .8rem;
     color: white;
 }

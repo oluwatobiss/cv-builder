@@ -1,12 +1,12 @@
 import { Component } from "react";
+import HoverRating from "./HoverRating";
 import ElementMaker from "./ElementMaker";
 
-class UntitledContact extends Component {
+class LanguageInfo extends Component {
     constructor() {
         super();
-        this.state = {
-            subHeader: {text: "Title", showInputEle: false},
-            myCustomContactText: {text: "Contact Details", showInputEle: false},
+        this.state = { 
+            myLanguage: {text: "English", readOnly: true},
         }
     }
 
@@ -25,32 +25,37 @@ class UntitledContact extends Component {
         this.setState({[className]: {...this.state[className], showInputEle: true}});
     }
 
+    handleRateDoubleClick = (e) => {
+        const {id} = e.currentTarget;
+        this.setState({[id]: {...this.state[id], readOnly: false}});
+    }
+    handleRateBlur = (e) => {
+        const {id} = e.currentTarget;
+        this.setState({[id]: {...this.state[id], readOnly: true}});
+    }
+
     render() {
         return (
             <article>
-                <ElementMaker name="subHeader"
+                <ElementMaker name="myLanguage"
                     mutableTagType="input"
                     type="text"
                     staticTagType="p"
-                    text={this.state.subHeader.text}
+                    text={this.state.myLanguage.text}
                     handleEleChange={this.handleEleChange}
                     handleEleBlur={this.handleEleBlur}
                     handleEleDoubleClick={this.handleEleDoubleClick}
-                    showInputEle={this.state.subHeader.showInputEle}
+                    showInputEle={this.state.myLanguage.showInputEle}
                 />
-                <ElementMaker name="myCustomContactText"
-                    mutableTagType="input"
-                    type="text"
-                    staticTagType="p"
-                    text={this.state.myCustomContactText.text}
-                    handleEleChange={this.handleEleChange}
-                    handleEleBlur={this.handleEleBlur}
-                    handleEleDoubleClick={this.handleEleDoubleClick}
-                    showInputEle={this.state.myCustomContactText.showInputEle}
+                <HoverRating hoverName="myLanguage"
+                    defaultRating={1.5} 
+                    readOnly={this.state.myLanguage.readOnly} 
+                    handleRateDoubleClick={this.handleRateDoubleClick}
+                    handleRateBlur={this.handleRateBlur}
                 />
             </article>
         )
     }
 }
 
-export default UntitledContact;
+export default LanguageInfo;

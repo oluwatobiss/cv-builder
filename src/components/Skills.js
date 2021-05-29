@@ -47,9 +47,7 @@ class Skills extends Component {
                     <span>Skills</span>
                     <button className="aside-btn" onClick={this.handleBtnClick}>Add More</button>
                 </header>
-                <div>
-                    {this.state.mySkills}
-                </div>
+                {this.state.mySkills}
             </section>
         )
     }

@@ -1,4 +1,4 @@
-function Buttons() {
+function OffPageButtons() {
     return (
         <div id="off-page-buttons-div">
             <button className="offPgBtn" onClick={() => window.print()}>Generate PDF</button>
@@ -9,4 +9,4 @@ function Buttons() {
     )
 }
 
-export default Buttons;
+export default OffPageButtons;

@@ -5,9 +5,7 @@ class Avatar extends Component {
     constructor() {
         super();
         this.avatarInputEleRef = React.createRef();
-        this.state = {
-            avatar: faker.image.avatar(),
-        };
+        this.state = { avatar: faker.image.avatar() };
     }
 
     handleLoad = e => URL.revokeObjectURL(e.target.src);

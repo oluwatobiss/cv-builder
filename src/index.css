@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Roboto:wght@300;500;700&display=swap');
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
     --cafe-noir: #4b3621;
@@ -24,9 +22,7 @@ body {
     font-weight: 300;
 }
 
-#root, #app-sections {
-    min-height: inherit;
-}
+#root, #app-sections { min-height: inherit; }
 
 #app-sections {
     display: grid;
@@ -34,20 +30,20 @@ body {
 }
 
 #about-app-div, #off-page-buttons-div {
+    height: 100vh;
     display: grid;
     align-content: center;
-    text-align: center;
-    height: 100vh;
     position: sticky;
     top: 0;
+    text-align: center;
     color: var(--seal-brown);
 }
 
 h1 {
+    margin-bottom: 4px;
 	font-family: 'Fredericka the Great', cursive;
 	font-size: 3.15rem;
 	font-weight: normal;
-    margin-bottom: 4px;
 }
 
 a {
@@ -55,23 +51,19 @@ a {
     color: var(--seal-brown);
 }
 
-a:hover {
-    color: var(--cafe-noir);
-}
+a:hover { color: var(--cafe-noir); }
 
 #cv-page-div {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-    background-color: white;
     margin: 40px 0;
     min-height: 29.7cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    background-color: white;
+    display: grid;
+    grid-template-columns: 70% 30%;
     font-size: .93rem;
 }
 
-main {
-    padding: 40px 50px;
-}
+main { padding: 40px 50px; }
 
 #id-section {
     height: 150px;
@@ -80,9 +72,7 @@ main {
     align-items: center;
 }
 
-#avatar-input-ele {
-    display: none;
-}
+#avatar-input-ele { display: none; }
 
 #avatar {
     width: 130px;
@@ -90,18 +80,14 @@ main {
     border-radius: 50%;
 }
 
-#name-and-job-title-div {
-    padding-left: 10px;
-}
+#name-and-job-title-div { padding-left: 10px; }
 
 input, .profile, [class^="my"] {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
 
-.profile {
-    min-height: 110px;
-}
+.profile { min-height: 110px; }
 
 .profile:focus {
     width: 100%;
@@ -110,23 +96,7 @@ input, .profile, [class^="my"] {
     font-size: .93rem;
 }
 
-[class^="my"] {
-    font-size: .93rem;
-}
-
-[class*="Achievement"] {
-    width: 100%;
-}
-
-[class*="Contact"] {
-    font-size: .8rem;
-    min-height: 15.2px;
-}
-
-[class$="CityName"], [class$="ZipCode"] {
-    display: inline-block;
-    min-width: 30px;
-}
+[class^="my"] { font-size: .93rem; }
 
 .fullName {
     width: 100%;
@@ -145,14 +115,26 @@ input, .profile, [class^="my"] {
     color: dimgrey;
 }
 
+[class*="Achievement"] { width: 100%; }
+
+[class*="Contact"] {
+    font-size: .8rem;
+    min-height: 15.2px;
+}
+
+[class$="CityName"], [class$="ZipCode"] {
+    display: inline-block;
+    min-width: 30px;
+}
+
 .main-header {
     display: grid;
     grid-template-columns: 70% 30%;
+    margin-top: 30px;
+    border-left: 4px solid var(--oxford-blue);
+    padding-left: 8px;
     font-size: 1rem;
     font-weight: 500;
-    border-left: 4px solid var(--oxford-blue);
-    margin-top: 30px;
-    padding-left: 8px;
     color: dimgrey;
 }
 
@@ -206,8 +188,8 @@ aside {
 .aside-header {
     display: grid;
     grid-template-columns: 60% 40%;
-    border-bottom: 1px solid white;
     margin-top: 60px;
+    border-bottom: 1px solid white;
     padding-bottom: 6px;
     font-size: 1rem;
     font-weight: 500;
@@ -232,15 +214,13 @@ aside {
     font-weight: 500;
 }
 
-#off-page-buttons-div {
-    justify-items: center;
-}
+#off-page-buttons-div { justify-items: center; }
 
 .offPgBtn {
     background-color: transparent;
-    border: 2px groove var(--seal-brown);
-    color: var(--seal-brown);
     margin: 10px;
+    color: var(--seal-brown);
+    border: 2px groove var(--seal-brown);
     border-radius: 6px;
     padding: 7px 15px;
     font-size: 1rem;
@@ -251,7 +231,7 @@ aside {
     box-shadow: 0 0 1.1em -0.3em rgba(0,0,0,0.25) inset;
 }
 
-.offPgBtn:focus {outline:0;}
+.offPgBtn:focus { outline:0; }
 
 @media print {
     #about-app-div, #off-page-buttons-div {

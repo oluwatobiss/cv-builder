@@ -1,7 +1,7 @@
 import { Component } from "react";
 import AboutApp from "./AboutApp";
 import CVPage from "./CVPage";
-import Buttons from "./Buttons";
+import OffPageButtons from "./OffPageButtons";
 
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
       <div id="app-sections">
         <AboutApp />
         <CVPage />
-        <Buttons />
+        <OffPageButtons />
       </div>
     );
   }

@@ -51,6 +51,7 @@ class Education extends Component {
                     <ElementMaker name="specialty"
                         mutableTagType="input"
                         type="text"
+                        placeholder="Degree"
                         staticTagType="span"
                         text={this.state.specialty.text}
                         handleEleChange={this.handleEleChange}
@@ -64,6 +65,7 @@ class Education extends Component {
                     <ElementMaker name="mySchoolName"
                         mutableTagType="input"
                         type="text"
+                        placeholder="School/Institution"
                         staticTagType="span"
                         text={this.state.mySchoolName.text}
                         handleEleChange={this.handleEleChange}
@@ -75,6 +77,7 @@ class Education extends Component {
                     <ElementMaker name="mySchoolCity"
                         mutableTagType="input"
                         type="text"
+                        placeholder="City"
                         staticTagType="span"
                         text={this.state.mySchoolCity.text}
                         handleEleChange={this.handleEleChange}

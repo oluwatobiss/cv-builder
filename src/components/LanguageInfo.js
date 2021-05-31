@@ -40,6 +40,7 @@ class LanguageInfo extends Component {
                 <ElementMaker name="myLanguage"
                     mutableTagType="input"
                     type="text"
+                    placeholder="Language"
                     staticTagType="p"
                     text={this.state.myLanguage.text}
                     handleEleChange={this.handleEleChange}

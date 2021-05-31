@@ -32,6 +32,7 @@ class Email extends Component {
                 <ElementMaker name="myContactEmail"
                     mutableTagType="input"
                     type="email"
+                    placeholder="Email"
                     staticTagType="p"
                     text={this.state.myContactEmail.text}
                     handleEleChange={this.handleEleChange}

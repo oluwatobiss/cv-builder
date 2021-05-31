@@ -30,6 +30,7 @@ class Achievement extends Component {
             <ElementMaker name="myAchievement"
                 mutableTagType="input"
                 type="text"
+                placeholder="Your Achievement"
                 staticTagType="li"
                 text={this.state.myAchievement.text}
                 handleEleChange={this.handleEleChange}

@@ -7,9 +7,10 @@ function ElementMaker(props) {
                 props.showInputEle ?
                 <MutableTagType 
                     type={props.type}
+                    placeholder={props.placeholder}
                     className={props.name} 
                     name={props.name} 
-                    value={props.text} 
+                    value={props.text}
                     onChange={props.handleEleChange} 
                     onBlur={props.handleEleBlur} 
                     autoFocus 

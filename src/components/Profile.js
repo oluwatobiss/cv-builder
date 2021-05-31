@@ -31,6 +31,7 @@ class Profile extends Component {
                 <header className="main-header">Profile</header>
                 <ElementMaker name="profile"
                     mutableTagType="textarea"
+                    placeholder="Professional Summary"
                     staticTagType="p"
                     text={this.state.profile.text}
                     handleEleChange={this.handleEleChange}

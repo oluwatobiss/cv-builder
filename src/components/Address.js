@@ -35,6 +35,7 @@ class Address extends Component {
                 <ElementMaker name="myContactStreetName"
                     mutableTagType="input"
                     type="text"
+                    placeholder="Street Name"
                     staticTagType="p"
                     text={this.state.myContactStreetName.text}
                     handleEleChange={this.handleEleChange}
@@ -46,6 +47,7 @@ class Address extends Component {
                     <ElementMaker name="myContactCityName"
                         mutableTagType="input"
                         type="text"
+                        placeholder="City"
                         staticTagType="span"
                         text={this.state.myContactCityName.text}
                         handleEleChange={this.handleEleChange}
@@ -57,6 +59,7 @@ class Address extends Component {
                     <ElementMaker name="myContactZipCode"
                         mutableTagType="input"
                         type="text"
+                        placeholder="Zip Code"
                         staticTagType="span"
                         text={this.state.myContactZipCode.text}
                         handleEleChange={this.handleEleChange}
@@ -68,6 +71,7 @@ class Address extends Component {
                 <ElementMaker name="myContactCountry"
                     mutableTagType="input"
                     type="text"
+                    placeholder="Country"
                     staticTagType="p"
                     text={this.state.myContactCountry.text}
                     handleEleChange={this.handleEleChange}

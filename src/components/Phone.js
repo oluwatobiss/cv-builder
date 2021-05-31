@@ -32,6 +32,7 @@ class Phone extends Component {
                 <ElementMaker name="myContactTel"
                     mutableTagType="input"
                     type="tel"
+                    placeholder="Phone"
                     staticTagType="p"
                     text={this.state.myContactTel.text}
                     handleEleChange={this.handleEleChange}

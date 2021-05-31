@@ -32,6 +32,7 @@ class NameAndJobTitle extends Component {
                 <ElementMaker name="fullName"
                     mutableTagType="input"
                     type="text"
+                    placeholder="Full Name"
                     staticTagType="p"
                     text={this.state.fullName.text}
                     handleEleChange={this.handleEleChange}
@@ -42,6 +43,7 @@ class NameAndJobTitle extends Component {
                 <ElementMaker name="jobTitle"
                     mutableTagType="input"
                     type="text"
+                    placeholder="Profession"
                     staticTagType="p"
                     text={this.state.jobTitle.text}
                     handleEleChange={this.handleEleChange}

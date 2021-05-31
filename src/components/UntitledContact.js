@@ -31,6 +31,7 @@ class UntitledContact extends Component {
                 <ElementMaker name="subHeader"
                     mutableTagType="input"
                     type="text"
+                    placeholder="Label"
                     staticTagType="p"
                     text={this.state.subHeader.text}
                     handleEleChange={this.handleEleChange}
@@ -41,6 +42,7 @@ class UntitledContact extends Component {
                 <ElementMaker name="myCustomContactText"
                     mutableTagType="input"
                     type="text"
+                    placeholder="Link"
                     staticTagType="p"
                     text={this.state.myCustomContactText.text}
                     handleEleChange={this.handleEleChange}

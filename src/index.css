@@ -94,12 +94,16 @@ main {
     padding-left: 10px;
 }
 
-input, textarea, [class^="my"] {
+input, .profile, [class^="my"] {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
 
-textarea:focus {
+.profile {
+    min-height: 110px;
+}
+
+.profile:focus {
     width: 100%;
     min-height: 110px;
     margin-top: 14.88px;
@@ -110,16 +114,23 @@ textarea:focus {
     font-size: .93rem;
 }
 
-[class*="Achievement"], [class*="Contact"] {
+[class*="Achievement"] {
     width: 100%;
 }
 
 [class*="Contact"] {
     font-size: .8rem;
+    min-height: 15.2px;
+}
+
+[class$="CityName"], [class$="ZipCode"] {
+    display: inline-block;
+    min-width: 30px;
 }
 
 .fullName {
     width: 100%;
+    min-height: 40.8px;
     margin: 0;
     font-size: 2.1rem;
     font-weight: 700;
@@ -127,6 +138,7 @@ textarea:focus {
 
 .jobTitle {
     width: 100%;
+    min-height: 15.2px;
     margin-top: 10px;
     text-transform: uppercase;
     font-size: .8rem;
@@ -173,12 +185,15 @@ textarea:focus {
 
 .specialty {
     width: 100%;
+    min-height: 27.2px;
     font-size: 1.4rem;
     font-weight: 500;
 }
 
-.city {
-    color: dimgrey;
+[class^="myCompany"], [class^="mySchool"] {
+    display: inline-block;
+    min-width: 80px;
+    min-height: 18.4px;
 }
 
 aside {
@@ -210,6 +225,7 @@ aside {
 
 .subHeader, [class$="Skill"], [class$="Language"] {
     width: 100%;
+    min-height: 15.2px;
     margin-top: 25px;
     margin-bottom: 12.8px;
     font-size: .8rem;

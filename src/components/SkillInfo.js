@@ -40,6 +40,7 @@ class SkillInfo extends Component {
                 <ElementMaker name="mySkill"
                     mutableTagType="input"
                     type="text"
+                    placeholder="Skill"
                     staticTagType="p"
                     text={this.state.mySkill.text}
                     handleEleChange={this.handleEleChange}

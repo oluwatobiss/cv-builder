@@ -52,6 +52,7 @@ class ExperienceInfo extends Component {
                     <ElementMaker name="specialty"
                         mutableTagType="input"
                         type="text"
+                        placeholder="Job Title"
                         staticTagType="span"
                         text={this.state.specialty.text}
                         handleEleChange={this.handleEleChange}
@@ -65,6 +66,7 @@ class ExperienceInfo extends Component {
                     <ElementMaker name="myCompanyName"
                         mutableTagType="input"
                         type="text"
+                        placeholder="Employer"
                         staticTagType="span"
                         text={this.state.myCompanyName.text}
                         handleEleChange={this.handleEleChange}
@@ -76,6 +78,7 @@ class ExperienceInfo extends Component {
                     <ElementMaker name="myCompanyCity"
                         mutableTagType="input"
                         type="text"
+                        placeholder="City"
                         staticTagType="span"
                         text={this.state.myCompanyCity.text}
                         handleEleChange={this.handleEleChange}

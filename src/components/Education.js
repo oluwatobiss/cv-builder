@@ -16,5 +16,4 @@ function Education() {
         </section>
     )
 }
-
 export default Education;

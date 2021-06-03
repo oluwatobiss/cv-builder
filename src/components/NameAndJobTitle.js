@@ -33,5 +33,4 @@ function NameAndJobTitle() {
         </div>
     )
 }
-
 export default NameAndJobTitle;

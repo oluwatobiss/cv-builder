@@ -1,29 +1,24 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import faker from "faker";
 
-class Avatar extends Component {
-    constructor() {
-        super();
-        this.avatarInputEleRef = React.createRef();
-        this.state = { avatar: faker.image.avatar() };
-    }
+function Avatar() {
+    const avatarInputEleRef = React.createRef();
+    const [avatar, setAvatar] = useState(faker.image.avatar());
 
-    handleLoad = e => URL.revokeObjectURL(e.target.src);
-    handleDoubleClick = () => this.avatarInputEleRef.current.click();
-    handleChange = (e) => {
+    const handleLoad = e => URL.revokeObjectURL(e.target.src);
+    const handleDoubleClick = () => avatarInputEleRef.current.click();
+    const handleChange = e => {
         e.target.files[0].type.split("/")[0] === "image" ?
-        this.setState({avatar: URL.createObjectURL(e.target.files[0])}) :
+        setAvatar(URL.createObjectURL(e.target.files[0])) :
         alert("Invalid Upload: Only Image Files Allowed.");
     }
 
-    render() {
-        return (
-            <div>
-                <input id="avatar-input-ele" type="file" accept="image/*" onChange={this.handleChange} ref={this.avatarInputEleRef} />
-                <img id="avatar" src={this.state.avatar} alt="Avatar" onDoubleClick={this.handleDoubleClick} onLoad={this.handleLoad} />
-            </div>
-        )
-    }
+    return (
+        <div>
+            <input id="avatar-input-ele" type="file" accept="image/*" onChange={handleChange} ref={avatarInputEleRef} />
+            <img id="avatar" src={avatar} alt="Avatar" onDoubleClick={handleDoubleClick} onLoad={handleLoad} />
+        </div>
+    )
 }
 
 export default Avatar;

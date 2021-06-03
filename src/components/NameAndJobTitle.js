@@ -25,7 +25,7 @@ function NameAndJobTitle() {
                 placeholder="Profession"
                 staticTagType="p"
                 text={jobTitle.text}
-                handleEleChange={(e) => setJobTitle({...jobTitle, text: e.target.value})}
+                handleEleChange={e => setJobTitle({...jobTitle, text: e.target.value})}
                 handleEleBlur={() => setJobTitle({...jobTitle, showInputEle: false})}
                 handleEleDoubleClick={() => setJobTitle({...jobTitle, showInputEle: true})}
                 showInputEle={jobTitle.showInputEle}

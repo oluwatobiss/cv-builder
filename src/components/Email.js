@@ -21,4 +21,5 @@ function Email() {
         </div>
     )
 }
+
 export default Email;

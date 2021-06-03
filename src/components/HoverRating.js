@@ -36,7 +36,7 @@ function HoverRating(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} onDoubleClick={props.handleRateDoubleClick} onBlur={props.handleRateBlur} id={props.hoverName}>
+    <div className={classes.root} onDoubleClick={props.handleRateDoubleClick} onBlur={props.handleRateBlur}>
       <StyledRating
         name="hover-feedback"
         value={value}

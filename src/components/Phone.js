@@ -21,4 +21,5 @@ function Phone() {
         </div>
     )
 }
+
 export default Phone;

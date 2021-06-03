@@ -20,4 +20,5 @@ function Avatar() {
         </div>
     )
 }
+
 export default Avatar;

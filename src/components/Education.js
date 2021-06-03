@@ -1,32 +1,20 @@
-import { Component } from "react";
+import { useState } from "react";
 import uniqid from "uniqid";
 import EducationInfo from "./EducationInfo";
 
-class Education extends Component {
-    constructor() {
-        super();
-        this.state = {
-            educationInfoArray: [<EducationInfo key={uniqid()} />]
-        }
-    }
-
-    handleBtnClick = () => {
-        this.setState({
-            educationInfoArray: [...this.state.educationInfoArray, <EducationInfo key={uniqid()} />]
-        })
-    }
-
-    render() {
-        return (
-            <section id="education-section">
-                <header className="main-header">
-                    <span>Education</span>
-                    <button className="header-btn" onClick={this.handleBtnClick}>Add Education</button>
-                </header>
-                {this.state.educationInfoArray}
-            </section>
-        )
-    }
+function Education() {
+    const [educationInfoArray, setEducationInfoArray] = useState([<EducationInfo key={uniqid()} />]);
+    return (
+        <section id="education-section">
+            <header className="main-header">
+                <span>Education</span>
+                <button className="header-btn" onClick={() => setEducationInfoArray([...educationInfoArray, <EducationInfo key={uniqid()} />])}>
+                    Add Education
+                </button>
+            </header>
+            {educationInfoArray}
+        </section>
+    )
 }
 
 export default Education;

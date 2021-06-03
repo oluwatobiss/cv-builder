@@ -1,45 +1,22 @@
-import { Component } from "react";
+import { useState } from "react";
 import faker from "faker";
 import ElementMaker from "./ElementMaker";
 
-class Achievement extends Component {
-    constructor() {
-        super();
-        this.state = {
-            myAchievement: {text: faker.lorem.sentence(), showInputEle: false},
-        }
-    }
-
-    handleEleChange = (e) => {
-        const {name, value} = e.target;
-        this.setState({[name]: {...this.state[name], text: value}});
-    }
-
-    handleEleBlur = (e) => {
-        const {name} = e.target;
-        this.setState({[name]: {...this.state[name], showInputEle: false}});
-    }
-
-    handleEleDoubleClick = (e) => {
-        const {className} = e.target;
-        this.setState({[className]: {...this.state[className], showInputEle: true}});
-    }
-
-    render() {
-        return (
-            <ElementMaker name="myAchievement"
-                mutableTagType="input"
-                type="text"
-                placeholder="Your Achievement"
-                staticTagType="li"
-                text={this.state.myAchievement.text}
-                handleEleChange={this.handleEleChange}
-                handleEleBlur={this.handleEleBlur}
-                handleEleDoubleClick={this.handleEleDoubleClick}
-                showInputEle={this.state.myAchievement.showInputEle}
-            />
-        )
-    }
+function Achievement() {
+    const [myAchievement, setMyAchievement] = useState({text: faker.lorem.sentence(), showInputEle: false});
+    return (
+        <ElementMaker name="myAchievement"
+            mutableTagType="input"
+            type="text"
+            placeholder="Your Achievement"
+            staticTagType="li"
+            text={myAchievement.text}
+            handleEleChange={e => setMyAchievement({...myAchievement, text: e.target.value})}
+            handleEleBlur={() => setMyAchievement({...myAchievement, showInputEle: false})}
+            handleEleDoubleClick={() => setMyAchievement({...myAchievement, showInputEle: true})}
+            showInputEle={myAchievement.showInputEle}
+        />
+    )
 }
 
 export default Achievement;

@@ -32,9 +32,9 @@ function ExperienceInfo() {
                     placeholder="Job Title"
                     staticTagType="span"
                     text={specialty.text}
+                    handleEleDoubleClick={() => setSpecialty({...specialty, showInputEle: true})}
                     handleEleChange={e => setSpecialty({...specialty, text: e.target.value})}
                     handleEleBlur={() => setSpecialty({...specialty, showInputEle: false})}
-                    handleEleDoubleClick={() => setSpecialty({...specialty, showInputEle: true})}
                     showInputEle={specialty.showInputEle}
                 />
                 <button className="header-btn" onClick={() => setMyAchievements([...myAchievements, <Achievement key={uniqid()} />])}>
@@ -48,9 +48,9 @@ function ExperienceInfo() {
                     placeholder="Employer"
                     staticTagType="span"
                     text={myCompanyName.text}
+                    handleEleDoubleClick={() => setMyCompanyName({...myCompanyName, showInputEle: true})}
                     handleEleChange={e => setMyCompanyName({...myCompanyName, text: e.target.value})}
                     handleEleBlur={() => setMyCompanyName({...myCompanyName, showInputEle: false})}
-                    handleEleDoubleClick={() => setMyCompanyName({...myCompanyName, showInputEle: true})}
                     showInputEle={myCompanyName.showInputEle}
                 />
                 <span>, </span>
@@ -60,9 +60,9 @@ function ExperienceInfo() {
                     placeholder="City"
                     staticTagType="span"
                     text={myCompanyCity.text}
+                    handleEleDoubleClick={() => setMyCompanyCity({...myCompanyCity, showInputEle: true})}
                     handleEleChange={e => setMyCompanyCity({...myCompanyCity, text: e.target.value})}
                     handleEleBlur={() => setMyCompanyCity({...myCompanyCity, showInputEle: false})}
-                    handleEleDoubleClick={() => setMyCompanyCity({...myCompanyCity, showInputEle: true})}
                     showInputEle={myCompanyCity.showInputEle}
                 />
             </p>
@@ -73,9 +73,9 @@ function ExperienceInfo() {
                         type="number"
                         staticTagType="span"
                         text={startYear.text}
+                        handleEleDoubleClick={() => setStartYear({...startYear, showInputEle: true})}
                         handleEleChange={handleNumEleChange}
                         handleEleBlur={() => setStartYear({...startYear, showInputEle: false})}
-                        handleEleDoubleClick={() => setStartYear({...startYear, showInputEle: true})}
                         showInputEle={startYear.showInputEle}
                     />
                     <span> - </span>
@@ -84,9 +84,9 @@ function ExperienceInfo() {
                         type="number"
                         staticTagType="span"
                         text={endYear.text}
+                        handleEleDoubleClick={() => setEndYear({...endYear, showInputEle: true})}
                         handleEleChange={handleNumEleChange}
                         handleEleBlur={() => setEndYear({...endYear, showInputEle: false})}
-                        handleEleDoubleClick={() => setEndYear({...endYear, showInputEle: true})}
                         showInputEle={endYear.showInputEle}
                     />
                 </em>

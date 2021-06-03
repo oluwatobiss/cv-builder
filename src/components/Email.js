@@ -13,9 +13,9 @@ function Email() {
                 placeholder="Email"
                 staticTagType="p"
                 text={myContactEmail.text}
+                handleEleDoubleClick={() => setMyContactEmail({...myContactEmail, showInputEle: true})}
                 handleEleChange={e => setMyContactEmail({...myContactEmail, text: e.target.value})}
                 handleEleBlur={() => setMyContactEmail({...myContactEmail, showInputEle: false})}
-                handleEleDoubleClick={() => setMyContactEmail({...myContactEmail, showInputEle: true})}
                 showInputEle={myContactEmail.showInputEle}
             />
         </div>

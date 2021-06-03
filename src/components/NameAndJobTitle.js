@@ -14,9 +14,9 @@ function NameAndJobTitle() {
                 placeholder="Full Name"
                 staticTagType="p"
                 text={fullName.text}
+                handleEleDoubleClick={() => setFullName({...fullName, showInputEle: true})}
                 handleEleChange={e => setFullName({...fullName, text: e.target.value})}
                 handleEleBlur={() => setFullName({...fullName, showInputEle: false})}
-                handleEleDoubleClick={() => setFullName({...fullName, showInputEle: true})}
                 showInputEle={fullName.showInputEle}
             />
             <ElementMaker name="jobTitle"
@@ -25,9 +25,9 @@ function NameAndJobTitle() {
                 placeholder="Profession"
                 staticTagType="p"
                 text={jobTitle.text}
+                handleEleDoubleClick={() => setJobTitle({...jobTitle, showInputEle: true})}
                 handleEleChange={e => setJobTitle({...jobTitle, text: e.target.value})}
                 handleEleBlur={() => setJobTitle({...jobTitle, showInputEle: false})}
-                handleEleDoubleClick={() => setJobTitle({...jobTitle, showInputEle: true})}
                 showInputEle={jobTitle.showInputEle}
             />
         </div>

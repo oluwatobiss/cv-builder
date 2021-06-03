@@ -31,9 +31,9 @@ function Education() {
                     placeholder="Degree"
                     staticTagType="span"
                     text={specialty.text}
+                    handleEleDoubleClick={() => setSpecialty({...specialty, showInputEle: true})}
                     handleEleChange={e => setSpecialty({...specialty, text: e.target.value})}
                     handleEleBlur={() => setSpecialty({...specialty, showInputEle: false})}
-                    handleEleDoubleClick={() => setSpecialty({...specialty, showInputEle: true})}
                     showInputEle={specialty.showInputEle}
                 />
                 <button className="header-btn" onClick={() => setMyAchievements([...myAchievements, <Achievement key={uniqid()} />])}>
@@ -47,9 +47,9 @@ function Education() {
                     placeholder="School/Institution"
                     staticTagType="span"
                     text={mySchoolName.text}
+                    handleEleDoubleClick={() => setMySchoolName({...mySchoolName, showInputEle: true})}
                     handleEleChange={e => setMySchoolName({...mySchoolName, text: e.target.value})}
                     handleEleBlur={() => setMySchoolName({...mySchoolName, showInputEle: false})}
-                    handleEleDoubleClick={() => setMySchoolName({...mySchoolName, showInputEle: true})}
                     showInputEle={mySchoolName.showInputEle}
                 />
                 <span>, </span>
@@ -59,9 +59,9 @@ function Education() {
                     placeholder="City"
                     staticTagType="span"
                     text={mySchoolCity.text}
+                    handleEleDoubleClick={() => setMySchoolCity({...mySchoolCity, showInputEle: true})}
                     handleEleChange={e => setMySchoolCity({...mySchoolCity, text: e.target.value})}
                     handleEleBlur={() => setMySchoolCity({...mySchoolCity, showInputEle: false})}
-                    handleEleDoubleClick={() => setMySchoolCity({...mySchoolCity, showInputEle: true})}
                     showInputEle={mySchoolCity.showInputEle}
                 />
             </p>
@@ -72,9 +72,9 @@ function Education() {
                         type="number"
                         staticTagType="span"
                         text={startYear.text}
+                        handleEleDoubleClick={() => setStartYear({...startYear, showInputEle: true})}
                         handleEleChange={handleNumEleChange}
                         handleEleBlur={() => setStartYear({...startYear, showInputEle: false})}
-                        handleEleDoubleClick={() => setStartYear({...startYear, showInputEle: true})}
                         showInputEle={startYear.showInputEle}
                     />
                     <span> - </span>
@@ -83,9 +83,9 @@ function Education() {
                         type="number"
                         staticTagType="span"
                         text={endYear.text}
+                        handleEleDoubleClick={() => setEndYear({...endYear, showInputEle: true})}
                         handleEleChange={handleNumEleChange}
                         handleEleBlur={() => setEndYear({...endYear, showInputEle: false})}
-                        handleEleDoubleClick={() => setEndYear({...endYear, showInputEle: true})}
                         showInputEle={endYear.showInputEle}
                     />
                 </em>

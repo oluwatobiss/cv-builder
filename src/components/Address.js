@@ -17,9 +17,9 @@ function Address() {
                 placeholder="Street Name"
                 staticTagType="p"
                 text={myContactStreetName.text}
+                handleEleDoubleClick={() => setMyContactStreetName({...myContactStreetName, showInputEle: true})}
                 handleEleChange={e => setMyContactStreetName({...myContactStreetName, text: e.target.value})}
                 handleEleBlur={() => setMyContactStreetName({...myContactStreetName, showInputEle: false})}
-                handleEleDoubleClick={() => setMyContactStreetName({...myContactStreetName, showInputEle: true})}
                 showInputEle={myContactStreetName.showInputEle}
             />
             <p>
@@ -29,9 +29,9 @@ function Address() {
                     placeholder="City"
                     staticTagType="span"
                     text={myContactCityName.text}
+                    handleEleDoubleClick={() => setMyContactCityName({...myContactCityName, showInputEle: true})}
                     handleEleChange={e => setMyContactCityName({...myContactCityName, text: e.target.value})}
                     handleEleBlur={() => setMyContactCityName({...myContactCityName, showInputEle: false})}
-                    handleEleDoubleClick={() => setMyContactCityName({...myContactCityName, showInputEle: true})}
                     showInputEle={myContactCityName.showInputEle}
                 />
                 <span>, </span>
@@ -41,9 +41,9 @@ function Address() {
                     placeholder="Zip Code"
                     staticTagType="span"
                     text={myContactZipCode.text}
+                    handleEleDoubleClick={() => setMyContactZipCode({...myContactZipCode, showInputEle: true})}
                     handleEleChange={e => setMyContactZipCode({...myContactZipCode, text: e.target.value})}
                     handleEleBlur={() => setMyContactZipCode({...myContactZipCode, showInputEle: false})}
-                    handleEleDoubleClick={() => setMyContactZipCode({...myContactZipCode, showInputEle: true})}
                     showInputEle={myContactZipCode.showInputEle}
                 />
             </p>
@@ -53,9 +53,9 @@ function Address() {
                 placeholder="Country"
                 staticTagType="p"
                 text={myContactCountry.text}
+                handleEleDoubleClick={() => setMyContactCountry({...myContactCountry, showInputEle: true})}
                 handleEleChange={e => setMyContactCountry({...myContactCountry, text: e.target.value})}
                 handleEleBlur={() => setMyContactCountry({...myContactCountry, showInputEle: false})}
-                handleEleDoubleClick={() => setMyContactCountry({...myContactCountry, showInputEle: true})}
                 showInputEle={myContactCountry.showInputEle}
             />
         </div>

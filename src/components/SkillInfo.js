@@ -3,7 +3,7 @@ import HoverRating from "./HoverRating";
 import ElementMaker from "./ElementMaker";
 
 function SkillInfo() {
-    const [mySkill, setMySkill] = useState({text: "React", readOnly: true, showInputEle: false});
+    const [mySkill, setMySkill] = useState({text: "React", showInputEle: false, readOnly: true});
     return (
         <article>
             <ElementMaker name="mySkill"

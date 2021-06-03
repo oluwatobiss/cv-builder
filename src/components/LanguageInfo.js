@@ -1,62 +1,30 @@
-import { Component } from "react";
+import { useState } from "react";
 import HoverRating from "./HoverRating";
 import ElementMaker from "./ElementMaker";
 
-class LanguageInfo extends Component {
-    constructor() {
-        super();
-        this.state = { 
-            myLanguage: {text: "English", readOnly: true},
-        }
-    }
-
-    handleEleChange = (e) => {
-        const {name, value} = e.target;
-        this.setState({[name]: {...this.state[name], text: value}})
-    }
-
-    handleEleBlur = (e) => {
-        const {name} = e.target;
-        this.setState({[name]: {...this.state[name], showInputEle: false}});
-    }
-
-    handleEleDoubleClick = (e) => {
-        const {className} = e.target;
-        this.setState({[className]: {...this.state[className], showInputEle: true}});
-    }
-
-    handleRateDoubleClick = (e) => {
-        const {id} = e.currentTarget;
-        this.setState({[id]: {...this.state[id], readOnly: false}});
-    }
-    handleRateBlur = (e) => {
-        const {id} = e.currentTarget;
-        this.setState({[id]: {...this.state[id], readOnly: true}});
-    }
-
-    render() {
-        return (
-            <article>
-                <ElementMaker name="myLanguage"
-                    mutableTagType="input"
-                    type="text"
-                    placeholder="Language"
-                    staticTagType="p"
-                    text={this.state.myLanguage.text}
-                    handleEleChange={this.handleEleChange}
-                    handleEleBlur={this.handleEleBlur}
-                    handleEleDoubleClick={this.handleEleDoubleClick}
-                    showInputEle={this.state.myLanguage.showInputEle}
-                />
-                <HoverRating hoverName="myLanguage"
-                    defaultRating={1.5} 
-                    readOnly={this.state.myLanguage.readOnly} 
-                    handleRateDoubleClick={this.handleRateDoubleClick}
-                    handleRateBlur={this.handleRateBlur}
-                />
-            </article>
-        )
-    }
+function LanguageInfo() {
+    const [myLanguage, setMyLanguage] = useState({text: "English", showInputEle: false, readOnly: true})
+    return (
+        <article>
+            <ElementMaker name="myLanguage"
+                mutableTagType="input"
+                type="text"
+                placeholder="Language"
+                staticTagType="p"
+                text={myLanguage.text}
+                handleEleDoubleClick={() => setMyLanguage({...myLanguage, showInputEle: true})}
+                handleEleChange={e => setMyLanguage({...myLanguage, text: e.target.value})}
+                handleEleBlur={() => setMyLanguage({...myLanguage, showInputEle: false})}
+                showInputEle={myLanguage.showInputEle}
+            />
+            <HoverRating hoverName="myLanguage"
+                defaultRating={1.5} 
+                readOnly={myLanguage.readOnly} 
+                handleRateDoubleClick={() => setMyLanguage({...myLanguage, readOnly: false})}
+                handleRateBlur={() => setMyLanguage({...myLanguage, readOnly: true})}
+            />
+        </article>
+    )
 }
 
 export default LanguageInfo;

@@ -11,9 +11,9 @@ function Achievement() {
             placeholder="Your Achievement"
             staticTagType="li"
             text={myAchievement.text}
+            handleEleDoubleClick={() => setMyAchievement({...myAchievement, showInputEle: true})}
             handleEleChange={e => setMyAchievement({...myAchievement, text: e.target.value})}
             handleEleBlur={() => setMyAchievement({...myAchievement, showInputEle: false})}
-            handleEleDoubleClick={() => setMyAchievement({...myAchievement, showInputEle: true})}
             showInputEle={myAchievement.showInputEle}
         />
     )

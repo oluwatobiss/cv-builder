@@ -12,9 +12,9 @@ function Profile() {
                 placeholder="Professional Summary"
                 staticTagType="p"
                 text={profile.text}
+                handleEleDoubleClick={() => setProfile({...profile, showInputEle: true})}
                 handleEleChange={e => setProfile({...profile, text: e.target.value})}
                 handleEleBlur={() => setProfile({...profile, showInputEle: false})}
-                handleEleDoubleClick={() => setProfile({...profile, showInputEle: true})}
                 showInputEle={profile.showInputEle}
             />
         </section>

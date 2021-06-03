@@ -12,9 +12,9 @@ function UntitledContact() {
                 placeholder="Label"
                 staticTagType="p"
                 text={subHeader.text}
+                handleEleDoubleClick={() => setSubHeader({...subHeader, showInputEle: true})}
                 handleEleChange={e => setSubHeader({...subHeader, text: e.target.value})}
                 handleEleBlur={() => setSubHeader({...subHeader, showInputEle: false})}
-                handleEleDoubleClick={() => setSubHeader({...subHeader, showInputEle: true})}
                 showInputEle={subHeader.showInputEle}
             />
             <ElementMaker name="myCustomContactText"
@@ -23,9 +23,9 @@ function UntitledContact() {
                 placeholder="Link"
                 staticTagType="p"
                 text={myCustomContactText.text}
+                handleEleDoubleClick={() => setMyCustomContactText({...myCustomContactText, showInputEle: true})}
                 handleEleChange={e => setMyCustomContactText({...myCustomContactText, text: e.target.value})}
                 handleEleBlur={() => setMyCustomContactText({...myCustomContactText, showInputEle: false})}
-                handleEleDoubleClick={() => setMyCustomContactText({...myCustomContactText, showInputEle: true})}
                 showInputEle={myCustomContactText.showInputEle}
             />
         </article>

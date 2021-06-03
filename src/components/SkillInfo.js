@@ -6,8 +6,13 @@ class SkillInfo extends Component {
     constructor() {
         super();
         this.state = { 
-            mySkill: {text: "React", readOnly: true},
+            mySkill: {text: "React", readOnly: true, showInputEle: false},
         }
+    }
+
+    handleEleDoubleClick = (e) => {
+        const {className} = e.target;
+        this.setState({[className]: {...this.state[className], showInputEle: true}});
     }
 
     handleEleChange = (e) => {
@@ -18,11 +23,6 @@ class SkillInfo extends Component {
     handleEleBlur = (e) => {
         const {name} = e.target;
         this.setState({[name]: {...this.state[name], showInputEle: false}});
-    }
-
-    handleEleDoubleClick = (e) => {
-        const {className} = e.target;
-        this.setState({[className]: {...this.state[className], showInputEle: true}});
     }
 
     handleRateDoubleClick = (e) => {
@@ -43,9 +43,9 @@ class SkillInfo extends Component {
                     placeholder="Skill"
                     staticTagType="p"
                     text={this.state.mySkill.text}
+                    handleEleDoubleClick={this.handleEleDoubleClick}
                     handleEleChange={this.handleEleChange}
                     handleEleBlur={this.handleEleBlur}
-                    handleEleDoubleClick={this.handleEleDoubleClick}
                     showInputEle={this.state.mySkill.showInputEle}
                 />
                 <HoverRating hoverName="mySkill"

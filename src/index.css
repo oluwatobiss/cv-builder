@@ -174,7 +174,7 @@ input, .profile, [class^="my"] {
 
 [class^="myCompany"], [class^="mySchool"] {
     display: inline-block;
-    min-width: 80px;
+    min-width: 40px;
     min-height: 18.4px;
 }
 
